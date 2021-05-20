@@ -8,17 +8,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.blog.teste.model.Usuario;
-import com.blog.teste.repository.UsuarioRepository;
 
 @Service
 public class UsuarioDetalhesServiceImpl implements UserDetailsService{
 	@Autowired
-	UsuarioRepository usuarioRepository;
+	UsuarioService usuarioService;
 	
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String usuario) throws UsernameNotFoundException{
-		Usuario user = usuarioRepository.findByUsuario(usuario);
+		Usuario user = null;
+		user = usuarioService.findByUsuario(usuario);
 			
 		return UsuarioDetalhesImpl.build(user);
 	}

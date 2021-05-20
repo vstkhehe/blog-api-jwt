@@ -1,0 +1,14 @@
+{"properties": [
+  {
+    "name": "app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "sourceType": "org.springframework.boot.autoconfigure.web.ServerProperties",
+    "description": "A description for 'app.jwtExpirationMs'"
+  },
+  {
+    "name": "app.jwtSecret",
+    "type": "int",
+    "sourceType": "org.springframework.boot.autoconfigure.web.ServerProperties",
+    "description": "A description for 'app.jwtSecret'"
+  }
+]}

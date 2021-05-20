@@ -39,4 +39,8 @@ public class UsuarioService{
 		return repository.existsByUsuario(usuario);
 	}
 
+	public Usuario findByUsuario(String usuario) {
+		return repository.findByUsuario(usuario);
+	}
+
 }

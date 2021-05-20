@@ -1,0 +1,25 @@
+app:
+  jwtExpirationMs: 86400000
+  jwtSecret: das768dSA8d7Asd68sAD87ds8dASd7AS87d
+spring:
+  datasource:
+    password: admin
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: update
+      hiebrnate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB

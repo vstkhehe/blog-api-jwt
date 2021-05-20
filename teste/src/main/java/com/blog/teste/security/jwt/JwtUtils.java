@@ -16,11 +16,10 @@ import io.jsonwebtoken.*;
 public class JwtUtils {
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-  @Value("${teste.app.jwtSecret}")
-  private String jwtSecret;
+  @Value("${app.jwtSecret}")
+  private String jwtSecret = "das768dSA8d7Asd68sAD87ds8dASd7AS87d";
 
-  @Value("${teste.app.jwtExpirationMs}")
-  private int jwtExpirationMs;
+  private int jwtExpirationMs = 86400000;
 
   public String generateJwtToken(Authentication authentication) {
 
@@ -37,6 +36,11 @@ public class JwtUtils {
 
   public boolean validateJwtToken(String authToken) {
     try {
+    	try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
       Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
       return true;
     } catch (SignatureException e) {

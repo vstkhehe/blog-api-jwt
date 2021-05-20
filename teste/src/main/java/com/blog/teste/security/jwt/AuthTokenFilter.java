@@ -14,12 +14,15 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.blog.teste.service.UsuarioDetalhesServiceImpl;
 
+
 public class AuthTokenFilter extends OncePerRequestFilter {
+  
   @Autowired
   private JwtUtils jwtUtils;
 
@@ -34,6 +37,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     try {
       String jwt = parseJwt(request);
       if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
+    	      	  
         String username = jwtUtils.getUserNameFromJwtToken(jwt);
 
         UserDetails userDetails = usuarioDetalhesService.loadUserByUsername(username);
