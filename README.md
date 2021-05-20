@@ -30,6 +30,12 @@ JSON:
     "senha":"(String)"
 }
 
+Consultar todos os post:
+GET - http://localhost:8080/api/posts
+
+Buscar por um post:
+GET - http://localhost:8080/api/posts/(id do post)
+
 Criar um novo post:
 POST - http://localhost:8080/api/newpost
 JSON:
@@ -51,15 +57,52 @@ JSON:
       }
 
 Excluir um post 
-DELETE - http://localhost:8080/api/post/
+DELETE - http://localhost:8080/api/post
 JSON:
     {
     	"id":"(String)"
     }
 
 Excluir um comentário:
-DELETE - http://localhost:8080/api/deletarComentario/
+DELETE - http://localhost:8080/api/comentario
 JSON:
     {
     	"id"(id do comentario):"(String)"
     }
+
+Consultar todos os albums:
+GET - http://localhost:8080/api/albums
+
+Buscar por um post:
+GET - http://localhost:8080/api/album/(id do album)	
+	
+Criar um novo album:
+POST - http://localhost:8080/api/newalbum
+JSON:
+    {
+        "nomeAlbum": "(String)"
+     }
+	 
+Adicionar uma foto:
+PUT - http://localhost:8080/api/album/(id do album)
+JSON:
+     {
+		"imagemNome": "(String)",
+		"imagemTipo": "(String)",
+		"imagemTamanho": "(String)"
+	}
+
+Excluir um album 
+DELETE - http://localhost:8080/api/album
+JSON:
+    {
+    	"id":"(String)"
+    }
+
+Excluir uma foto:
+DELETE - http://localhost:8080/api/foto
+JSON:
+    {
+    	"id"(id da foto):"(String)"
+    }
+	
